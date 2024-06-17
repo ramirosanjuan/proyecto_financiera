@@ -1,4 +1,8 @@
 from tkinter import ttk, Tk, Label, Frame, Menu
+from x_vistas.vista_main import crear_main
+from x_vistas.vista_panel_control import crear_panel_control
+from x_vistas.vista_transacciones import crear_transacciones
+from x_vistas.vista_reportes import crear_reportes
 
 # Crear la ventana principal
 root = Tk()
@@ -11,35 +15,10 @@ container.pack(fill='both', expand=True)
 
 
 # Crear las vistas
-def crear_main():
-    main = Frame(container)
-    titulo = Label(main, text="Contenido de la Vista 1").pack(padx=10, pady=10)
-    return main
-
-
-def crear_panel_control():
-    panel_control = Frame(container)
-    tit = Label(panel_control, text="Contenido de la Vista 2").pack(padx=10, pady=10)
-    return panel_control
-
-
-def crear_transacciones():
-    transacciones = Frame(container)
-    tit = Label(transacciones, text="Contenido de la Vista 3").pack(padx=10, pady=10)
-    return transacciones
-
-
-def crear_reportes():
-    reportes = Frame(container)
-    tit = Label(reportes, text="Contenido de la Vista 3").pack(padx=10, pady=10)
-    return reportes
-
-
-# Inicializar vistas
-main = crear_main()
-panel_control = crear_panel_control()
-transacciones = crear_transacciones()
-reportes = crear_reportes()
+main = crear_main(container)
+panel_control = crear_panel_control(container)
+transacciones = crear_transacciones(container)
+reportes = crear_reportes(container)
 
 
 # Función para mostrar una vista específica
