@@ -1,4 +1,4 @@
-from tkinter import ttk, Tk, Label, Frame, Menu
+from tkinter import Tk, Frame, Menu
 from x_vistas.vista_main import crear_main
 from x_vistas.vista_panel_control import crear_panel_control
 from x_vistas.vista_transacciones import crear_transacciones
@@ -44,6 +44,8 @@ navegar_menu.add_command(label="Vista de Transacciones",
                          command=lambda: mostrar_vista(transacciones))
 navegar_menu.add_command(label="Panel de reportes",
                          command=lambda: mostrar_vista(reportes))
+navegar_menu.add_separator()
+navegar_menu.add_command(label="Salir", command=root.quit)
 menubar.add_cascade(label="Navegar", menu=navegar_menu)
 
 # Mostrar la vista inicial
