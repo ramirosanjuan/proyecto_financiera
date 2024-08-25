@@ -3,7 +3,7 @@ from tkinter import DoubleVar, StringVar, OptionMenu, font
 from tkcalendar import DateEntry
 
 
-def crear_main(parent):
+def widgets_alta(parent):
     main = Frame(parent)
 
     var_monto = DoubleVar()

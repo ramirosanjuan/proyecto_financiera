@@ -1,11 +1,7 @@
-from tkinter import Frame, Label, W, E
+from tkinter import Frame
 
 
-def crear_panel_control(parent):
+def widgets_panel_control(parent):
     panel_control = Frame(parent)
-
-    titulo = Label(panel_control, text="Ingrese los datos",
-                   bg="DarkOrchid3", fg="thistle1", height=1, width=80)
-    titulo.grid(row=0, column=0, columnspan=6, padx=1, pady=1, sticky=W+E)
 
     return panel_control
