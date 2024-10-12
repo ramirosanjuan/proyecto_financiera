@@ -17,27 +17,27 @@ class App():
         self.var_descripcion = StringVar()
 
         root.title("Administrador de Tareas")
-        root.geometry("1000x700")
+        root.geometry("730x600")
 
         self.notebook = ttk.Notebook(root)
         self.notebook.pack(fill='both', expand=True)
 
         self.main = Frame(self.notebook)
-        self.panel_control = Frame(self.notebook)
-        self.transacciones = Frame(self.notebook)
         self.reportes = Frame(self.notebook)
+        self.transacciones = Frame(self.notebook)
+        self.panel_control = Frame(self.notebook)
 
         self.notebook.add(self.main, text='Main')
-        self.notebook.add(self.panel_control, text='Panel de control')
-        self.notebook.add(self.transacciones, text='Transacciones')
         self.notebook.add(self.reportes, text='Reportes')
+        self.notebook.add(self.transacciones, text='Transacciones')
+        self.notebook.add(self.panel_control, text='Panel de control')
 
         widgets_alta(self.main).pack(fill='both', expand=True)
-        widgets_panel_control(self.panel_control).pack(fill='both',
-                                                       expand=True)
+        widgets_reportes(self.reportes).pack(fill='both', expand=True)
         widgets_transacciones(self.transacciones).pack(fill='both',
                                                        expand=True)
-        widgets_reportes(self.reportes).pack(fill='both', expand=True)
+        widgets_panel_control(self.panel_control).pack(fill='both',
+                                                       expand=True)
 
         self.menu_navegacion()
 
@@ -59,15 +59,16 @@ class App():
         self.navegar_menu.add_command(label="Main",
                                       command=lambda:
                                           self.mostrar_vista("main"))
-        self.navegar_menu.add_command(label="Panel de control",
-                                      command=lambda:
-                                          self.mostrar_vista("panel_control"))
-        self.navegar_menu.add_command(label="Vista de Transacciones",
-                                      command=lambda:
-                                          self.mostrar_vista("transacciones"))
         self.navegar_menu.add_command(label="Panel de reportes",
                                       command=lambda:
                                           self.mostrar_vista("reportes"))
+        self.navegar_menu.add_command(label="Vista de Transacciones",
+                                      command=lambda:
+                                          self.mostrar_vista("transacciones"))
+        self.navegar_menu.add_command(label="Panel de control",
+                                      command=lambda:
+                                          self.mostrar_vista("panel_control"))
+
         self.navegar_menu.add_separator()
         self.navegar_menu.add_command(label="Salir", command=self.root.quit)
         self.menubar.add_cascade(label="Navegar", menu=self.navegar_menu)
